@@ -69,3 +69,18 @@ content :
 }
 ```
 
+## PS:
+
+Run DB setup
+```
+/opt/jira/bin/config.sh
+```
+
+Then in
+```
+/var/jira/dbconfig.xml
+```
+add on <url> after InnoDB:
+```
+&amp;useSSL=false
+```
