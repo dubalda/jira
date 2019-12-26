@@ -69,7 +69,7 @@ content :
 }
 ```
 
-## PS:
+## For new versions:
 
 Run DB setup
 ```
