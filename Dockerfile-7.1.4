@@ -1,1 +1,10 @@
 FROM softwareplant/jira:software-7.1.4
+
+RUN apt-get -y update && \
+    apt-get -y remove postgresql && \
+    apt-get -y install postgresql-9.5 && \
+    rm -rf /var/lib/apt/lists/* && \
+    cp -r /var/lib/postgresql/9.5/main/* /home/dbbackup/ && \
+    ln -s /var/lib/postgresql/9.5 /var/lib/postgresql/9.6
+
+VOLUME /var/lib/postgresql/9.5/main /var/atlassian/jira-app /var/atlassian/jira-home
